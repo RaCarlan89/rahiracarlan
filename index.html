@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio Pessoal</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    
+    body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #ffffffbb; /* Cor de fundo desejada */
+  min-height: 100vh;
+}
+
+    .header-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-height: 60vh;
+}
+      .column {
+      width: calc(100% - 10px); /* Subtrai as margens de ambos os lados */
+      box-sizing: border-box; /* Inclui padding e border na largura total */
+      margin: 30px auto; /* Margens iguais acima e abaixo, e auto para os lados para centralizar */
+      padding: 30px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    header li {
+      margin: 0 10px;
+    }
+
+    header a {
+      text-decoration: none;
+      color: #000000;
+      background-color: #e57d90;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      margin-top: 50px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100px;
+      border-top: 1px solid #ddd;
+      margin-top: 50px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Classe para ocultar a seção */
+    .hidden {
+      display: none;
+    }
+    .education {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .education-item {
+      display: flex;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 10px;
+      border-left: 4px solid #e57d90;
+      border-radius: 4px;
+      width: calc(50% - 10px); /* Para dividir em duas colunas */
+    }
+
+    .education-item i {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+
+    .education-item p {
+      margin: 0;
+    }
+
+    header a {
+  /* Outros estilos existentes */
+  height: 40px; /* Altura desejada para os botões */
+}
+
+header a img {
+  height: 80%; /* 80% da altura dos botões */
+}
+
+header a img {
+  width: 20px; /* Largura desejada para os ícones */
+}
+.fa-graduation-cap {
+  font-size: 32px; /* ou outro valor desejado */
+}
+ /* Estilos para todas as imagens dentro dos links */
+ a img {
+      width: 24px; /* Define a largura desejada para os ícones */
+      height: 28px; /* Define a altura desejada para os ícones */
+      margin-right: 4px; /* Adiciona um espaço entre o ícone e o texto do link */
+    }
+
+/* Estilo para o cabeçalho da página home */
+#home-header {
+  background-image: url('https://lh3.googleusercontent.com/pw/AP1GczOv4bzVez3rHQ2Yhnl3oeIsQkSGYEq5OtqVQ6F0wgZJk3vzOqPFSS4n-yOvl4A3cIqbX29J1GzDt0numYU3DTqjeeXuWdISRTxEoyTtCibpvIm0Dcr8FJHaf-o62kFC2R1dLTourmKgfEag5O0YTB1Z7Q=w1440-h648-s-no-gm?authuser=0');
+  background-size: cover;
+  background-position: center;
+  width: 95%;
+  height: 60vh; /* Altura igual à viewport height */
+}
+
+#home-header {
+  /* Outros estilos existentes */
+  position: relative; /* Adiciona posicionamento relativo */
+}
+
+#home-header p {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  font-weight: bold;
+  color: transparent; /* Torna o texto transparente para mostrar apenas o efeito de fundo */
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: linear-gradient(45deg, #f9d423, #ff4e50, #f9d423); /* Gradiente de cores para simular aquarela */
+  -webkit-background-clip: text; /* Aplica o efeito de clip para mostrar o fundo apenas no texto */
+  background-clip: text;
+  animation: write 1s steps(880) forwards;
+}
+.welcome-text {
+  text-align: center;
+}
+
+.line {
+  display: block;
+}
+
+@keyframes write {
+  0% {
+    background-size: 300% 300%; /* Inicia com tamanho maior para criar o efeito de transição */
+  }
+  100% {
+    background-size: 100% 100%; /* Termina com tamanho normal do gradiente */
+  }
+}
+
+
+/* Estilo para as imagens da página home */
+#home-header {
+  position: relative;
+  width: 95%;
+  height: 60vh; /* Altura igual à viewport height */
+  overflow: hidden;
+  margin: 0 auto; /* Centraliza a div na página */
+}
+
+#home-header img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Para manter a proporção da imagem */
+  animation: flicker 0.1s infinite alternate, move 0.5s infinite linear;
+}
+
+    /* Estilo para as imagens da página home */
+    #home-header {
+      position: relative;
+      width: 95%;
+      height: 60vh; /* Altura igual à viewport height */
+      overflow: hidden;
+      margin: 0 auto; /* Centraliza a div na página */
+    }
+
+    #home-header img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Para manter a proporção da imagem */
+    }
+/* CSS */
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Começa completamente transparente */
+  }
+  100% {
+    opacity: 1; /* Termina completamente visível */
+  }
+}
+
+/* Aplica a animação ao elemento desejado */
+.elemento {
+  animation: fadeIn 1s ease-in-out; /* Duração de 1 segundo com uma transição suave */
+}
+/* Estilo para o link quando o mouse passa sobre ele */
+.button:hover {
+            color: #e57d90; /* Cor rosa */
+          }
+          
+          /* Estilo da caixa ao redor do link */
+          .button {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #e57d90; /* Cor da borda rosa */
+            text-decoration: none;
+            color: #333; /* Cor do texto */
+            transition: border-color 0.3s; /* Transição suave da cor da borda */
+          }
+@media only screen and (max-width: 768px) {
+  /* Alterações de estilo para telas menores que 768px */
+  main {
+    width: 90%;
+  }
+
+  .column {
+    width: 100%;
+  }
+
+  header a {
+    padding: 6px 16px; /* Reduz o padding dos botões */
+  }
+
+  .education-item {
+    width: 100%; /* Define a largura total para itens de educação em telas menores */
+  }
+
+  #home-header p {
+    font-size: 24px; /* Reduz o tamanho do texto do cabeçalho na página inicial para telas menores */
+    left: 50%; /* Centraliza o texto do cabeçalho na página inicial */
+    transform: translateX(-50%);
+  }
+
+  .header-container {
+    min-height: 40vh; /* Reduz a altura do cabeçalho na página inicial para telas menores */
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Conteúdo da página -->
+
+</body>
+</html>
+
+  <header>
+    <h1></h1>
+    <nav>
+   
+      <ul>
+        <li><a href="#home" id="home-link"><img src="https://cdn1.iconfinder.com/data/icons/freeline/32/home_house_real_estate-256.png" alt="Ícone de casa"> Home</a></li>
+        <li><a href="#sobre" id="sobre-link"><img src="https://cdn0.iconfinder.com/data/icons/eon-social-media-contact-info-2/32/user_people_person_users_man-256.png" alt="Ícone de sobre"> Sobre Mim</a></li>
+        <li><a href="#formacao" id="formacao-link"><img src="https://cdn3.iconfinder.com/data/icons/fluent-regular-24px-vol-4/24/ic_fluent_hat_graduation_24_regular-256.png" alt="Ícone de formação"> Formação </a></li>
+        <li><a href="#portfolio" id="portfolio-link"><img src="https://cdn1.iconfinder.com/data/icons/carbon-design-system-vol-6/32/portfolio-512.png" alt="Ícone de portfólio"> Portfólio</a></li>
+        <li><a href="#contato" id="contato-link"><img src="https://cdn1.iconfinder.com/data/icons/iconoir-vol-3/24/message-text-256.png" alt="Ícone de contato"> Contato</a></li>
+    </ul>
+    
+      
+    </nav>
+    
+  </header>
+  <main>
+    <section id="home-text">
+      <div id="home-header">
+        <p id="welcome-text"></p>
+        <p class="welcome-text">
+          <span class="line">Bem-vindo(a)</span><br>
+          <span class="line">à minha página!</span>
+        </p>
+        
+
+      </div>
+      <div class="container">
+        <div class="column">
+          <div class="education-item" style="text-align: justify; width: 100%;">
+           
+            <span style="margin: 0; padding: 0; text-align: justify; width: 100%; display: inline-block;">
+              É com muita alegria que te recebo aqui no meu cantinho virtual. Esta página foi criada com muito carinho e dedicação, pensando em cada detalhe para proporcionar a você uma experiência agradável.
+              Sinta-se à vontade para explorar, interagir e compartilhar suas impressões e sugestões comigo.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="sobre-text" class="hidden">
+      <div class="container">
+        <div class="column">
+          <h2>Sobre Mim</h2>
+          <div class="education-item" style="text-align: justify; width: 100%;">
+            <span style="margin: 0; padding: 0; text-align: justify; width: 100%; display: inline-block;">
+              <p>Me chamo Rahíra, mas pode me chamar de Rah, Rahi, ou até mesmo de "aquela que resolve tudo" (brincadeirinha). Sou uma mistura de tecnóloga em comércio exterior, fotógrafa, designer gráfico e taekwondista (sim, eu chuto e luto!) e mãe do Francisco, 8 anos, um menino lindo e inteligente a luz da minha vida! Atualmente, estou mergulhada nos estudos de análise e desenvolvimento de sistemas, buscando sempre evoluir e aprender mais.</p>
+              <p>&nbsp;</p>
+              <p>Minha história com a tecnologia começou cedo, aos 18 anos, quando descobri o fascinante mundo dos sistemas operacionais e da manutenção de computadores. Lembro-me como se fosse ontem da minha experiência na empresa de sistemas de segurança da minha madrinha, onde tive que lidar com notas fiscais escritas em máquina de escrever (sim, máquina de escrever!).</p>
+              <p>&nbsp;</p>
+              <p>Foi aí que minha veia criativa e inovadora entrou em ação. Desenvolvi um método inovador usando o Word e uma impressora matricial para modernizar o processo. E não parou por aí! Meu padrinho me desafiou a implantar o MySQL (versão 5.1) em rede, e, após muitos estudos e dedicação, consegui realizar essa tarefa com sucesso.</p>
+              <p>&nbsp;</p>
+              <p>Com o tempo, minha jornada me levou para novos desafios e aprendizados. Cursei Comércio Exterior, onde conheci pessoas incríveis e tive a oportunidade de trabalhar na Siemens, um mundo totalmente novo para mim. Mais tarde, vim parar em Santa Maria-RS, onde minha formação em ComEx me abriu portas para o setor financeiro de uma empresa de eventos, e foi aí que minha paixão pela fotografia ganhou espaço.</p>
+              <p>&nbsp;</p>
+              <p>Meu irmão mais velho, Deni, que é fotógrafo, (e também é a luz da minha vida) sempre me inspirou nesse mundo mágico da fotografia. Aprendi Photoshop aos 14 anos e, mais tarde, na empresa de eventos, tive a oportunidade de me aprofundar ainda mais nesse universo, tornando-me laboratorista fotográfico e editora de imagens.</p>
+              <p>&nbsp;</p>
+              <p>Mas a sede por conhecimento não parou por aí. Em 2020, decidi me aventurar ainda mais e cursar Design Gráfico, aprimorando minhas habilidades e me tornando ainda mais apaixonada por essa área. E aqui estou eu, escrevendo minha história e compartilhando um pouco de mim com você.</p>
+              <p>&nbsp;</p>
+              <p>Hoje, mais madura e convicta das minhas escolhas, sinto que despertou em mim o espírito inquiridor daquela menina sonhadora e curiosa de alguns anos atrás. E é por isso que decidi cursar análise e desenvolvimento de sistemas, para me desafiar e crescer ainda mais.</p>
+              <p>&nbsp;</p>
+              <p>Mais uma vez, seja muito bem-vindo(a) e fique à vontade para explorar, interagir e compartilhar suas impressões e sugestões comigo. Vamos juntos nessa jornada de descobertas e aprendizados!</p>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+      <section id="formacao-text" class="hidden">
+      <div class="container">
+        <div class="column">
+          
+        </style>
+        
+        <!-- Link para baixar o currículo -->
+        <div style="margin-top: 20px; text-align: center;">
+          <a class="button" href="https://drive.google.com/file/d/1gFfR8Y9D2wzDCsrNYxyUK6-YrU_feM6r/view?usp=sharing" download="Rahíra_Carlan_Currículo.pdf">Baixe meu currículo em PDF</a>
+        </div>
+          <h2>Formação Acadêmica</h2>
+          <div class="education">
+            <div class="education-item">
+              <div>
+                <p>Graduação em Comércio Exterior</p>
+                <p>2008 - 2010</p>
+                <p>Centro Universitário Internacional Uninter</p>
+              </div>
+            </div>
+    
+            <div class="education-item">
+              <div>
+                <p>MBA em Gestão de Eventos (interrompido em 2016)</p>
+                <p>2016 - Atual</p>
+                <p>Centro Universitário Internacional Uninter</p>
+                <p>Ano de Interrupção: 2016</p>
+              </div>
+            </div>
+    
+            <div class="education-item">
+              <div>
+                <p>Graduação em Design Gráfico</p>
+                <p>2020 - 2022</p>
+                <p>Centro Universitário Internacional Uninter</p>
+              </div>
+            </div>
+    
+            <div class="education-item">
+              <div>
+                <p>Graduação de Análise e Desenvolvimento de Sistemas</p>
+                <p>2023 - Presente</p>
+                <p>Centro Universitário Internacional Uninter</p>
+              </div>
+            </div>
+    
+            <div class="education-item">
+              <div>
+                <p>Ensino Médio (2º ano)</p>
+                <p>2004 – 2006</p>
+                <p>Colégio Estadual Rodoplho Zaninelli</p>
+              </div>
+            </div>
+    
+            <div class="education-item">
+              <div>
+                <p>Ensino Fundamental</p>
+                <p>1996 – 2003</p>
+                <p>Escola Estadual Santo Antônio (1996-2001)</p>
+                <p>Colégio Estadual Rodoplho Zaninelli (2001-2006)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="column">
+          <h2>Formação Complementar</h2>
+          <div class="education">
+            <div class="education-item">
+              <div>
+                <p>Maquiagem Rose Glam, Olhos Coloridos e Maquiagem Smokey Glam (Duração: 6h)</p>
+                <p>2019 - 2019</p>
+                <p>Gleysi Sassi</p>
+              </div>
+            </div>
+            <div class="education-item">
+              <div>
+                <p>Maquiagem Iniciante (Duração: 28h)</p>
+                <p>2013 – 2013</p>
+                <p>SG Hairs</p>
+              </div>
+            </div>
+            <div class="education-item">
+              <div>
+                <p>Fotografia Digital com Photoshop (Duração: 60h)</p>
+                <p>2014 – 2014</p>
+                <p>Senac-RS</p>
+              </div>
+            </div>
+            <div class="education-item">
+              <div>
+                <p>Photoshop (Duração: 148h)</p>
+                <p>2012 – 2012</p>
+                <p>Senac-RS</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    
+      <div class="column">
+        <h2>Idiomas</h2>
+        <div class="education">
+          <div class="education-item">
+            <div>
+              <p>Inglês</p>
+              <p>Compreende Razoavelmente, fala Pouco, lê razoavelmente, escreve bem.</p>
+            </div>
+          </div>
+          <div class="education-item">
+            <div>
+              <p>Espanhol</p>
+              <p>Compreende bem, Fala pouco, Lê bem, Escreve razoavelmente.</p>
+            </div>
+          </div>
+          <div class="education-item">
+            <div>
+              <p>Português</p>
+              <p>Compreende bem, fala bem, lê bem, escreve bem.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+    <section id="portfolio-text" class="hidden">
+      <div class="container">
+        <div class="column">
+           <div class="education-item" style="text-align: justify; width: 100%;">
+      <span style="margin: 0; padding: 0; text-align: justify; width: 100%; display: inline-block;">            
+     <!-- Link para visializar trabalhos -->
+     <div style="margin-top: 20px; text-align: center;">
+      <a class="button" href="https://www.figma.com/proto/XgVn9VpvIi9UKrAoO0uiIS/PROT%C3%93TIPO_APP?type=design&node-id=37-452&t=ieb1ff9UWq2AFMSq-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=37%3A452&show-proto-sidebar=1&mode=design" download="Protótipo Vivara">Protótipagem / Redesign   </a>
+      <div>
+        <br>
+        <p>Nas informações sobre mim, e no meu currículo você pode notar que a minha experiência é voltada para a área fotográfica e gráfica, mas mesmo assim postei um dos trabalhos que mais gostei de desenvolver, o qual deveria escolher um aplicativo de compras e fazer o redesign do mesmo. Hoje não tenho muito o que compartilhar, mas espero que daqui algum tempo quando você retornar, esteja cheio de novidades.</p>
+    </div>
+    </section>
+    <section id="contato-text" class="hidden">
+      <div class="container" style="max-width: 600px; margin: 0 auto;">
+        <div class="column" style="text-align: center;">
+          <h2>Entre em Contato</h2>
+          <form action="#" method="POST" style="text-align: left;">
+            <label for="nome" style="display: block;">Nome:</label>
+            <input type="text" id="nome" name="nome" style="display: block; width: 300px; max-width: 100%; padding: 8px; margin-bottom: 10px;" required>
+    
+            <label for="email" style="display: block;">Email:</label>
+            <input type="email" id="email" name="email" style="display: block; width: 300px; max-width: 100%; padding: 8px; margin-bottom: 10px;" required>
+    
+            <label for="mensagem" style="display: block;">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" style="display: block; width: 300px; max-width: 100%; padding: 8px; margin-bottom: 10px;" required></textarea>
+    
+            <button type="submit" style="display: inline-block; padding: 8px 20px; margin-top: 10px; background-color: #e57d90; color: #000000; border: none; border-radius: 4px; cursor: pointer;">Enviar</button>
+          </form>
+      
+    </section>
+    
+    
+    
+  </main>
+  <footer>
+    <p>© 2024 Rahíra Carlan. Todos os direitos reservados.</p>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const links = document.querySelectorAll('header a');
+
+      links.forEach(link => {
+        link.addEventListener('click', function(event) {
+          event.preventDefault();
+
+          // Oculta todos os textos
+          document.querySelectorAll('main section').forEach(section => {
+            section.classList.add('hidden');
+          });
+
+          // Exibe apenas o texto do link clicado
+          const targetId = this.getAttribute('href').replace('#', '') + '-text';
+          document.getElementById(targetId).classList.remove('hidden');
+
+          // Muda a cor do link clicado
+          links.forEach(link => {
+            link.style.color = '#000'; // Cor padrão
+          });
+          this.style.color = '#0077cc'; // Cor do link clicado
+        });
+      });
+    });
+  </script>
+</body>
+</html>

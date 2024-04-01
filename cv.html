@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio Pessoal</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    
+    body {
+  /* Define o corpo do documento */
+  display: flex; /* Utiliza o modelo flexbox para organizar os elementos */
+  flex-direction: column; /* Define a direção dos itens como coluna */
+  align-items: center; /* Alinha os itens ao centro no eixo transversal */
+  margin: 0; /* Remove as margens padrão */
+  font-family: 'Quicksand', sans-serif; /* Define a fonte do texto */
+  background-color: #ffffffbb; /* Cor de fundo desejada com transparência */
+  min-height: 100vh; /* Define a altura mínima como 100% da altura da viewport */
+}
+
+.header-container {
+  /* Define o container do cabeçalho */
+  position: relative; /* Define a posição do container como relativa */
+  display: flex; /* Utiliza o modelo flexbox para organizar os elementos */
+  justify-content: center; /* Alinha os itens ao centro no eixo principal */
+  min-height: 60vh; /* Define a altura mínima como 60% da altura da viewport */
+}
+
+/* Define o estilo para as colunas */
+.column {
+  width: calc(100% - 10px); /* Calcula a largura subtraindo as margens de ambos os lados */
+  box-sizing: border-box; /* Inclui padding e border na largura total */
+  margin: 30px auto; /* Margens iguais acima e abaixo, e auto para os lados para centralizar */
+  padding: 30px; /* Adiciona um padding interno de 30px */
+  background-color: #ffffff; /* Cor de fundo branca */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
+  border-radius: 4px; /* Adiciona cantos arredondados */
+}
+
+/* Define o estilo para o cabeçalho */
+header {
+  /* Define o cabeçalho */
+  display: flex; /* Utiliza o modelo flexbox para organizar os elementos */
+  flex-direction: column; /* Define a direção dos itens como coluna */
+  align-items: center; /* Alinha os itens ao centro no eixo transversal */
+}
+
+/* Define o estilo para a lista de links no cabeçalho */
+header ul {
+  /* Define a lista de links no cabeçalho */
+  list-style: none; /* Remove os marcadores de lista */
+  margin: 0; /* Remove as margens padrão */
+  padding: 0; /* Remove o padding padrão */
+  display: flex; /* Utiliza o modelo flexbox para organizar os elementos */
+  justify-content: center; /* Alinha os itens ao centro no eixo principal */
+}
+
+/* Define o estilo para os itens da lista de links no cabeçalho */
+header li {
+  /* Define os itens da lista de links no cabeçalho */
+  margin: 0 10px; /* Adiciona margens horizontais */
+}
+
+/* Define o estilo para os links no cabeçalho */
+header a {
+  /* Define os links no cabeçalho */
+  text-decoration: none; /* Remove a decoração de texto sublinhado */
+  color: #000000; /* Define a cor do texto como preta */
+  background-color: #e57d90; /* Cor de fundo rosa */
+  border: none; /* Remove a borda */
+  padding: 8px 20px; /* Adiciona um padding interno */
+  border-radius: 4px; /* Adiciona cantos arredondados */
+  cursor: pointer; /* Altera o cursor ao passar sobre o link */
+}
+
+/* Define o estilo para o conteúdo principal */
+main {
+  /* Define o conteúdo principal */
+  display: flex; /* Utiliza o modelo flexbox para organizar os elementos */
+  flex-direction: column; /* Define a direção dos itens como coluna */
+  align-items: center; /* Alinha os itens ao centro no eixo transversal */
+  width: 80%; /* Define a largura como 80% */
+  margin-top: 50px; /* Adiciona uma margem superior */
+}
+
+/* Define o estilo para o rodapé */
+footer {
+  /* Define o rodapé */
+  display: flex; /* Utiliza o modelo flexbox para organizar os elementos */
+  justify-content: center; /* Alinha os itens ao centro no eixo principal */
+  align-items: center; /* Alinha os itens ao centro no eixo transversal */
+  width: 100%; /* Define a largura como 100% */
+  height: 100px; /* Define a altura como 100px */
+  border-top: 1px solid #ddd; /* Adiciona uma borda superior */
+  margin-top: 50px; /* Adiciona uma margem superior */
+}
+
+/* Define o estilo para o texto no rodapé */
+footer p {
+  /* Define o texto no rodapé */
+  margin: 0; /* Remove as margens padrão */
+}
+
+/* Define a classe para ocultar um elemento */
+.hidden {
+  /* Oculta o elemento */
+  display: none;
+}
+
+/* Define o estilo para a lista de educação */
+.education {
+  /* Define a lista de educação */
+  display: flex; /* Utiliza o modelo flexbox para organizar os elementos */
+  flex-wrap: wrap; /* Permite que os itens quebrem para a linha seguinte */
+  gap: 20px; /* Adiciona um espaçamento entre os itens */
+  margin-top: 20px; /* Adiciona uma margem superior */
+}
+
+/* Define o estilo para os itens de educação */
+.education-item {
+  /* Define os itens de educação */
+  display: flex; /* Utiliza o modelo flexbox para organizar os elementos */
+  align-items: center; /* Alinha os itens ao centro no eixo transversal */
+  background-color: #ffffff; /* Cor de fundo branca */
+  padding: 10px; /* Adiciona um padding interno */
+  border-left: 4px solid #e57d90; /* Adiciona uma borda à esquerda */
+  border-radius: 4px; /* Adiciona cantos arredondados */
+  width: calc(50% - 10px); /* Define a largura para dividir em duas colunas */
+}
+
+/* Define o estilo para o ícone nos itens de educação */
+.education-item i {
+  /* Define o ícone nos itens de educação */
+  font-size: 24px; /* Define o tamanho da fonte do ícone */
+  margin-right: 10px; /* Adiciona uma margem à direita do ícone */
+}
+
+/* Define o estilo para o texto nos itens de educação */
+.education-item p {
+  /* Define o texto nos itens de educação */
+  margin: 0; /* Remove as margens padrão */
+}
+
+/* Define o estilo para os botões no cabe
+
+    <!-- Informações Sobre mim -->
+    
+    <section id="sobre-text" class="hidden">
+      <div class="container">
+        <div class="column">
+          <h2>Sobre Mim</h2>
+          <div class="education-item" style="text-align: justify; width: 100%;">
+            <span style="margin: 0; padding: 0; text-align: justify; width: 100%; display: inline-block;">
+              <p>Me chamo Rahíra, mas pode me chamar de Rah, Rahi, ou até mesmo de "aquela que resolve tudo" (brincadeirinha). Sou uma mistura de tecnóloga em comércio exterior, fotógrafa, designer gráfico e taekwondista (sim, eu chuto e luto!) e mãe do Francisco, 8 anos, um menino lindo e inteligente a luz da minha vida! Atualmente, estou mergulhada nos estudos de análise e desenvolvimento de sistemas, buscando sempre evoluir e aprender mais.</p>
+              <p>&nbsp;</p>
+              <p>Minha história com a tecnologia começou cedo, aos 18 anos, quando descobri o fascinante mundo dos sistemas operacionais e da manutenção de computadores. Lembro-me como se fosse ontem da minha experiência na empresa de sistemas de segurança da minha madrinha, onde tive que lidar com notas fiscais escritas em máquina de escrever (sim, máquina de escrever!).</p>
+              <p>&nbsp;</p>
+              <p>Foi aí que minha veia criativa e inovadora entrou em ação. Desenvolvi um método inovador usando o Word e uma impressora matricial para modernizar o processo. E não parou por aí! Meu padrinho me desafiou a implantar o MySQL (versão 5.1) em rede, e, após muitos estudos e dedicação, consegui realizar essa tarefa com sucesso.</p>
+              <p>&nbsp;</p>
+              <p>Com o tempo, minha jornada me levou para novos desafios e aprendizados. Cursei Comércio Exterior, onde conheci pessoas incríveis e tive a oportunidade de trabalhar na Siemens, um mundo totalmente novo para mim. Mais tarde, vim parar em Santa Maria-RS, onde minha formação em ComEx me abriu portas para o setor financeiro de uma empresa de eventos, e foi aí que minha paixão pela fotografia ganhou espaço.</p>
+              <p>&nbsp;</p>
+              <p>Meu irmão mais velho, Deni, que é fotógrafo, (e também é a luz da minha vida) sempre me inspirou nesse mundo mágico da fotografia. Aprendi Photoshop aos 14 anos e, mais tarde, na empresa de eventos, tive a oportunidade de me aprofundar ainda mais nesse universo, tornando-me laboratorista fotográfico e editora de imagens.</p>
+              <p>&nbsp;</p>
+              <p>Mas a sede por conhecimento não parou por aí. Em 2020, decidi me aventurar ainda mais e cursar Design Gráfico, aprimorando minhas habilidades e me tornando ainda mais apaixonada por essa área. E aqui estou eu, escrevendo minha história e compartilhando um pouco de mim com você.</p>
+              <p>&nbsp;</p>
+              <p>Hoje, mais madura e convicta das minhas escolhas, sinto que despertou em mim o espírito inquiridor daquela menina sonhadora e curiosa de alguns anos atrás. E é por isso que decidi cursar análise e desenvolvimento de sistemas, para me desafiar e crescer ainda mais.</p>
+              <p>&nbsp;</p>
+              <p>Mais uma vez, seja muito bem-vindo(a) e fique à vontade para explorar, interagir e compartilhar suas impressões e sugestões comigo. Vamos juntos nessa jornada de descobertas e aprendizados!</p>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+      <section id="formacao-text" class="hidden">
+      <div class="container">
+        <div class="column">
+          
+        </style>
+        
+        <!-- Link para baixar o currículo -->
+        <div style="margin-top: 20px; text-align: center;">
+          <a class="button" href="https://drive.google.com/file/d/1gFfR8Y9D2wzDCsrNYxyUK6-YrU_feM6r/view?usp=sharing" download="Rahíra_Carlan_Currículo.pdf">Baixe meu currículo em PDF</a>
+       
+          <!-- Informações Formação Educacional -->
+        </div>
+          <h2>Formação Acadêmica</h2>
+          <div class="education">
+            <div class="education-item">
+              <div>
+                <p>Graduação em Comércio Exterior</p>
+                <p>2008 - 2010</p>
+                <p>Centro Universitário Internacional Uninter</p>
+              </div>
+            </div>
+    
+            <div class="education-item">
+              <div>
+                <p>MBA em Gestão de Eventos (interrompido em 2016)</p>
+                <p>2016 - Atual</p>
+                <p>Centro Universitário Internacional Uninter</p>
+                <p>Ano de Interrupção: 2016</p>
+              </div>
+            </div>
+    
+            <div class="education-item">
+              <div>
+                <p>Graduação em Design Gráfico</p>
+                <p>2020 - 2022</p>
+                <p>Centro Universitário Internacional Uninter</p>
+              </div>
+            </div>
+    
+            <div class="education-item">
+              <div>
+                <p>Graduação de Análise e Desenvolvimento de Sistemas</p>
+                <p>2023 - Presente</p>
+                <p>Centro Universitário Internacional Uninter</p>
+              </div>
+            </div>
+    
+            <div class="education-item">
+              <div>
+                <p>Ensino Médio (2º ano)</p>
+                <p>2004 – 2006</p>
+                <p>Colégio Estadual Rodoplho Zaninelli</p>
+              </div>
+            </div>
+    
+            <div class="education-item">
+              <div>
+                <p>Ensino Fundamental</p>
+                <p>1996 – 2003</p>
+                <p>Escola Estadual Santo Antônio (1996-2001)</p>
+                <p>Colégio Estadual Rodoplho Zaninelli (2001-2006)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="column">
+          <h2>Formação Complementar</h2>
+          <div class="education">
+            <div class="education-item">
+              <div>
+                <p>Maquiagem Rose Glam, Olhos Coloridos e Maquiagem Smokey Glam (Duração: 6h)</p>
+                <p>2019 - 2019</p>
+                <p>Gleysi Sassi</p>
+              </div>
+            </div>
+            <div class="education-item">
+              <div>
+                <p>Maquiagem Iniciante (Duração: 28h)</p>
+                <p>2013 – 2013</p>
+                <p>SG Hairs</p>
+              </div>
+            </div>
+            <div class="education-item">
+              <div>
+                <p>Fotografia Digital com Photoshop (Duração: 60h)</p>
+                <p>2014 – 2014</p>
+                <p>Senac-RS</p>
+              </div>
+            </div>
+            <div class="education-item">
+              <div>
+                <p>Photoshop (Duração: 148h)</p>
+                <p>2012 – 2012</p>
+                <p>Senac-RS</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      <div class="column">
+        <h2>Idiomas</h2>
+        <div class="education">
+          <div class="education-item">
+            <div>
+              <p>Inglês</p>
+              <p>Compreende Razoavelmente, fala Pouco, lê razoavelmente, escreve bem.</p>
+            </div>
+          </div>
+          <div class="education-item">
+            <div>
+              <p>Espanhol</p>
+              <p>Compreende bem, Fala pouco, Lê bem, Escreve razoavelmente.</p>
+            </div>
+          </div>
+          <div class="education-item">
+            <div>
+              <p>Português</p>
+              <p>Compreende bem, fala bem, lê bem, escreve bem.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Informações Porfólio  -->
+   
+    </section>
+    <section id="portfolio-text" class="hidden">
+      <div class="container">
+        <div class="column">
+           <div class="education-item" style="text-align: justify; width: 100%;">
+      <span style="margin: 0; padding: 0; text-align: justify; width: 100%; display: inline-block;">            
+    
+        <!-- Link para visializar trabalhos -->
+    
+     <div style="margin-top: 20px; text-align: center;">
+      <a class="button" href="https://www.figma.com/proto/XgVn9VpvIi9UKrAoO0uiIS/PROT%C3%93TIPO_APP?type=design&node-id=37-452&t=ieb1ff9UWq2AFMSq-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=37%3A452&show-proto-sidebar=1&mode=design" download="Protótipo Vivara">Protótipagem / Redesign   </a>
+      <div>
+        <br>
+        <p>Nas informações sobre mim, e no meu currículo você pode notar que a minha experiência é voltada para a área fotográfica e gráfica, mas mesmo assim postei um dos trabalhos que mais gostei de desenvolver, o qual deveria escolher um aplicativo de compras e fazer o redesign do mesmo. Hoje não tenho muito o que compartilhar, mas espero que daqui algum tempo quando você retornar, esteja cheio de novidades.</p>
+    </div>
+    
+    <!-- Informações Contato  -->
+
+  </section>
+    <section id="contato-text" class="hidden">
+      <div class="container" style="max-width: 600px; margin: 0 auto;">
+        <div class="column" style="text-align: center;">
+          <h2>Entre em Contato</h2>
+          <form action="#" method="POST" style="text-align: left;">
+            <label for="nome" style="display: block;">Nome:</label>
+            <input type="text" id="nome" name="nome" style="display: block; width: 300px; max-width: 100%; padding: 8px; margin-bottom: 10px;" required>
+    
+            <label for="email" style="display: block;">Email:</label>
+            <input type="email" id="email" name="email" style="display: block; width: 300px; max-width: 100%; padding: 8px; margin-bottom: 10px;" required>
+    
+            <label for="mensagem" style="display: block;">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" style="display: block; width: 300px; max-width: 100%; padding: 8px; margin-bottom: 10px;" required></textarea>
+    
+            <button type="submit" style="display: inline-block; padding: 8px 20px; margin-top: 10px; background-color: #e57d90; color: #000000; border: none; border-radius: 4px; cursor: pointer;">Enviar</button>
+          </form>
+      
+    </section>
+    
+  </main>
+  <footer>
+    <p>© 2024 Rahíra Carlan. Todos os direitos reservados.</p>
+  </footer>
+ 
+ <script>
+    // Adiciona um event listener para quando o conteúdo HTML da página é completamente carregado
+    document.addEventListener('DOMContentLoaded', function() {
+      const links = document.querySelectorAll('header a');
+      // Para cada link encontrado, adiciona um event listener para o evento de clique
+      links.forEach(link => {
+        link.addEventListener('click', function(event) {
+          event.preventDefault();
+
+          // Oculta todos os textos
+          document.querySelectorAll('main section').forEach(section => {
+            section.classList.add('hidden');
+          });
+
+          // Exibe apenas o texto do link clicado
+          const targetId = this.getAttribute('href').replace('#', '') + '-text';
+          document.getElementById(targetId).classList.remove('hidden');
+
+          // Muda a cor do link clicado
+          links.forEach(link => {
+            link.style.color = '#000'; // Cor padrão
+          });
+          this.style.color = '#0077cc'; // Cor do link clicado
+        });
+      });
+    });
+  </script>
+</body>
+</html>
